@@ -10,7 +10,7 @@ function App() {
   const [index, setIndex] = useState(null);
   const [editIndex, setEditIndex] = useState(null);
   const [updatedTodo, setUpdatedTodo] = useState("");
-const [cheaked, setCheaked] = useState(false);
+
 
   useEffect(() => {
     const storedTodos = JSON.parse(localStorage.getItem("todos"));
@@ -55,7 +55,7 @@ const [cheaked, setCheaked] = useState(false);
   };
 
   const toggleCompleted = (indexToToggle) => {
-    setCheaked(!cheaked)
+  
     const updatedTodos = todos.map((item, i) => {
       if (i === indexToToggle) {
         return { ...item, isCompleted: !item.isCompleted };
@@ -102,7 +102,7 @@ const [cheaked, setCheaked] = useState(false);
                 checked={item.isCompleted}
                 onChange={() => toggleCompleted(itemIndex)}
               />
-           {cheaked?   <Checkmark size='medium' />:""}
+           {item.isCompleted?   <Checkmark size='medium' />:""}
               {editIndex === itemIndex ? (
                 <input
                   type="text"
