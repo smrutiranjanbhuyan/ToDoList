@@ -69,19 +69,19 @@ function App() {
     <>
       <Navbar />
    
-      <div className="container mx-auto bg-purple-100 my-5 rounded-xl p-8 mt-11 h-screen">
+      <div className="container mx-auto bg-purple-100 my-5 rounded-xl p-8 lg:p-12 lg:my-10">
         <div className="addTodos mb-4">
           <h1 className="text-3xl font-bold mb-2">Add your list</h1>
-          <div className="flex">
+          <div className="flex flex-col lg:flex-row">
             <input
               type="text"
-              className="border-2 border-purple-400 px-2 py-1 rounded-l-md"
+              className="border-2 border-purple-400 px-2 py-1 rounded-l-md mb-2 lg:mb-0 lg:mr-2"
               placeholder="Enter your todo"
               onChange={handleChange}
               value={todo}
             />
             <button
-              className="bg-purple-400 text-white px-4 py-1 rounded-r-md ml-2 hover:bg-purple-500"
+              className="bg-purple-400 text-white px-4 py-1 rounded-r-md hover:bg-purple-500"
               onClick={handleAdd}
             >
               Add to list
